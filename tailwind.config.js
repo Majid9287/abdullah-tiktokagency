@@ -78,6 +78,22 @@ module.exports = {
           md: "calc(var(--radius) - 2px)",
           sm: "calc(var(--radius) - 4px)",
         },
+        animation: {
+          'float': 'float 6s ease-in-out infinite',
+          'float-delayed': 'float 8s ease-in-out infinite 2s',
+          'float-slow': 'float 10s ease-in-out infinite 1s',
+          'pulse': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-20px)' },
+          },
+        },
+        rotate: {
+          '15': '15deg',
+          '-15': '-15deg',
+        },
       },
     },
     plugins: [],
