@@ -74,7 +74,7 @@ export default function HeroSection() {
                 onClick={() => setShowJoinLink(true)}
                 className="bg-white text-pink-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0"
               >
-                Join Now
+                Apply Now
               </button>
 
               {showJoinLink && (

@@ -1,16 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Zap, Users, DollarSign, Award, Headphones, BarChart } from "lucide-react"
+import { useState } from "react";
+import {
+  Zap,
+  Users,
+  DollarSign,
+  Award,
+  Headphones,
+  BarChart,
+} from "lucide-react";
 
 export default function BenefitsSection() {
-  const [hoveredCard, setHoveredCard] = useState(null)
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   const benefits = [
     {
       icon: <Zap className="h-10 w-10" />,
       title: "Rapid Growth",
-      description: "Accelerate your TikTok growth with proven strategies and expert guidance.",
+      description:
+        "Accelerate your TikTok growth with proven strategies and expert guidance.",
       gradient: "from-pink-400 to-purple-400",
       iconGradient: "from-pink-500 to-purple-500",
       textColor: "text-pink-600",
@@ -18,7 +26,8 @@ export default function BenefitsSection() {
     {
       icon: <Users className="h-10 w-10" />,
       title: "Community Support",
-      description: "Join a network of like-minded creators who support and inspire each other.",
+      description:
+        "Join a network of like-minded creators who support and inspire each other.",
       gradient: "from-purple-400 to-indigo-400",
       iconGradient: "from-purple-500 to-indigo-500",
       textColor: "text-purple-600",
@@ -26,7 +35,8 @@ export default function BenefitsSection() {
     {
       icon: <DollarSign className="h-10 w-10" />,
       title: "Monetization",
-      description: "Learn effective ways to monetize your content and build a sustainable income.",
+      description:
+        "Learn effective ways to monetize your content and build a sustainable income.",
       gradient: "from-indigo-400 to-blue-400",
       iconGradient: "from-indigo-500 to-blue-500",
       textColor: "text-indigo-600",
@@ -34,7 +44,8 @@ export default function BenefitsSection() {
     {
       icon: <Award className="h-10 w-10" />,
       title: "Exclusive Opportunities",
-      description: "Get access to brand deals, collaborations, and special events.",
+      description:
+        "Get access to brand deals, collaborations, and special events.",
       gradient: "from-blue-400 to-cyan-400",
       iconGradient: "from-blue-500 to-cyan-500",
       textColor: "text-blue-600",
@@ -42,7 +53,8 @@ export default function BenefitsSection() {
     {
       icon: <Headphones className="h-10 w-10" />,
       title: "24/7 Mentorship",
-      description: "Receive guidance from experienced mentors whenever you need it.",
+      description:
+        "Receive guidance from experienced mentors whenever you need it.",
       gradient: "from-cyan-400 to-teal-400",
       iconGradient: "from-cyan-500 to-teal-500",
       textColor: "text-cyan-600",
@@ -50,46 +62,50 @@ export default function BenefitsSection() {
     {
       icon: <BarChart className="h-10 w-10" />,
       title: "Analytics & Insights",
-      description: "Understand your performance with detailed analytics and actionable insights.",
+      description:
+        "Understand your performance with detailed analytics and actionable insights.",
       gradient: "from-teal-400 to-pink-400",
       iconGradient: "from-teal-500 to-pink-500",
       textColor: "text-teal-600",
     },
-  ]
+  ];
 
   return (
     <section id="benefits" className="py-20 relative overflow-hidden">
       {/* Background with gradient overlay
       <div className="absolute inset-0 bg-gradient-to-b from-pink-100 to-purple-100"></div> */}
 
-<div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-400 rounded-full opacity-20 animate-pulse"></div>
-          <div
-            className="absolute top-20 right-20 w-60 h-60 bg-purple-400 rounded-full opacity-20 animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute bottom-10 left-1/4 w-40 h-40 bg-pink-300 rounded-full opacity-20 animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-400 rounded-full opacity-20 animate-pulse"></div>
+        <div
+          className="absolute top-20 right-20 w-60 h-60 bg-purple-400 rounded-full opacity-20 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-10 left-1/4 w-40 h-40 bg-pink-300 rounded-full opacity-20 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
 
-          {/* Additional floating elements */}
-          <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
-          <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
+        {/* Additional floating elements */}
+        <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
+        <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
 
-          {/* Light rays */}
-          <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-pink-300/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-purple-300/20 to-transparent transform -rotate-15 opacity-20"></div>
-        </div>
+        {/* Light rays */}
+        <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-pink-300/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-purple-300/20 to-transparent transform -rotate-15 opacity-20"></div>
+      </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-pink-500/10 text-pink-600 text-sm font-medium mb-3">
             EXCLUSIVE BENEFITS
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-pink-800 mb-4">Why Join Our Agency?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-800 mb-4">
+            Why Join Our Agency?
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-pink-900/70 max-w-2xl mx-auto">
-            Unlock your full potential as a TikTok creator with our comprehensive suite of benefits and support systems.
+            Unlock your full potential as a TikTok creator with our
+            comprehensive suite of benefits and support systems.
           </p>
         </div>
 
@@ -101,12 +117,8 @@ export default function BenefitsSection() {
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              
-
               {/* Card content */}
               <div className="relative flex flex-col h-full bg-white/80 backdrop-blur-lg rounded-2xl p-6 border border-white/50 shadow-xl transition-all duration-500 group-hover:bg-white/90">
-               
-
                 <h3
                   className={`text-xl font-bold mb-3 ${benefit.textColor} group-hover:text-pink-600 transition-colors duration-300`}
                 >
@@ -141,6 +153,5 @@ export default function BenefitsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

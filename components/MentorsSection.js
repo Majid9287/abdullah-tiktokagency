@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { TiktokIcon, InstagramIcon } from "./social-icons"
+import { useState } from "react";
+import Image from "next/image";
+import { TiktokIcon, InstagramIcon } from "./social-icons";
 
 export default function MentorsSection() {
-  const [activeCard, setActiveCard] = useState(null)
+  const [activeCard, setActiveCard] = useState(null);
 
   const mentors = [
     {
       name: "Sarah Johnson",
       role: "Lead Mentor",
       image: "/hero1.jpg?height=400&width=300",
-      description: "With over 5M followers, Sarah specializes in lifestyle content and engagement strategies.",
+      description:
+        "With over 5M followers, Sarah specializes in lifestyle content and engagement strategies.",
       socialMedia: {
         tiktok: "@sarahjohnson",
         instagram: "@sarah.johnson",
@@ -30,7 +31,8 @@ export default function MentorsSection() {
       name: "Michael Chen",
       role: "Growth Specialist",
       image: "/mentor1.jpg?height=400&width=300",
-      description: "Michael has helped over 100 creators reach 1M+ followers with his unique growth tactics.",
+      description:
+        "Michael has helped over 100 creators reach 1M+ followers with his unique growth tactics.",
       socialMedia: {
         tiktok: "@michaelchen",
         instagram: "@michael.chen",
@@ -48,7 +50,8 @@ export default function MentorsSection() {
       name: "Aisha Patel",
       role: "Content Strategist",
       image: "/placeholder.svg?height=400&width=300",
-      description: "Aisha is known for creating viral content that resonates with diverse audiences.",
+      description:
+        "Aisha is known for creating viral content that resonates with diverse audiences.",
       socialMedia: {
         tiktok: "@aishapatel",
         instagram: "@aisha.patel",
@@ -66,7 +69,8 @@ export default function MentorsSection() {
       name: "David Kim",
       role: "Monetization Expert",
       image: "/placeholder.svg?height=400&width=300",
-      description: "David specializes in helping creators turn their passion into a sustainable income.",
+      description:
+        "David specializes in helping creators turn their passion into a sustainable income.",
       socialMedia: {
         tiktok: "@davidkim",
         instagram: "@david.kim",
@@ -80,7 +84,7 @@ export default function MentorsSection() {
         clients: "83",
       },
     },
-  ]
+  ];
 
   return (
     <section id="mentors" className="py-20 relative overflow-hidden">
@@ -93,16 +97,36 @@ export default function MentorsSection() {
         <div className="absolute top-40 right-10 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div> */}
+      <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-400 rounded-full opacity-20 animate-pulse"></div>
+      <div
+        className="absolute top-20 right-20 w-60 h-60 bg-purple-400 rounded-full opacity-20 animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div
+        className="absolute bottom-10 left-1/4 w-40 h-40 bg-pink-300 rounded-full opacity-20 animate-pulse"
+        style={{ animationDelay: "2s" }}
+      ></div>
+
+      {/* Additional floating elements */}
+      <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
+      <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
+
+      {/* Light rays */}
+      <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-pink-300/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-purple-300/20 to-transparent transform -rotate-15 opacity-20"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block py-1 px-4 rounded-full bg-purple-500/10 text-purple-600 text-sm font-medium mb-3">
             EXPERT GUIDANCE
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">Meet Our Live Mentors</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
+            Meet Our Live Mentors
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-purple-900/70 max-w-2xl mx-auto">
-            Learn from industry professionals who have mastered the art of TikTok content creation and growth.
+            Learn from industry professionals who have mastered the art of
+            TikTok content creation and growth.
           </p>
         </div>
 
@@ -127,17 +151,16 @@ export default function MentorsSection() {
                     className="object-cover object-center transition-all duration-500 group-hover:scale-105"
                   />
 
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent opacity-90"></div>
-
                   {/* Colored accent top bar */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${mentor.gradient}`}></div>
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${mentor.gradient}`}
+                  ></div>
 
                   {/* Content overlay */}
                   <div className="absolute inset-0 flex flex-col justify-between p-6">
                     {/* Top section - Social media */}
                     <div className="flex justify-end space-x-2">
-                      <a
+                      {/* <a
                         href={`https://tiktok.com/${mentor.socialMedia.tiktok}`}
                         className={`bg-white/80 backdrop-blur-sm p-2 rounded-full hover:bg-gradient-to-r ${mentor.gradient} hover:text-white transition-all`}
                       >
@@ -148,7 +171,7 @@ export default function MentorsSection() {
                         className={`bg-white/80 backdrop-blur-sm p-2 rounded-full hover:bg-gradient-to-r ${mentor.gradient} hover:text-white transition-all`}
                       >
                         <InstagramIcon className={`w-5 h-5 ${mentor.textColor} group-hover:text-white`} />
-                      </a>
+                      </a> */}
                     </div>
 
                     {/* Bottom section - Mentor info */}
@@ -157,38 +180,51 @@ export default function MentorsSection() {
                       <div className="grid grid-cols-3 gap-2 mb-4">
                         <div className="bg-white/80 rounded-lg p-2 text-center">
                           <p className="text-xs text-gray-500">Followers</p>
-                          <p className={`font-bold ${mentor.textColor}`}>{mentor.stats.followers}</p>
+                          <p className={`font-bold ${mentor.textColor}`}>
+                            {mentor.stats.followers}
+                          </p>
                         </div>
                         <div className="bg-white/80 rounded-lg p-2 text-center">
                           <p className="text-xs text-gray-500">Growth</p>
-                          <p className="text-green-500 font-bold">{mentor.stats.growth}</p>
+                          <p className="text-green-500 font-bold">
+                            {mentor.stats.growth}
+                          </p>
                         </div>
                         <div className="bg-white/80 rounded-lg p-2 text-center">
                           <p className="text-xs text-gray-500">Clients</p>
-                          <p className={`font-bold ${mentor.textColor}`}>{mentor.stats.clients}</p>
+                          <p className={`font-bold ${mentor.textColor}`}>
+                            {mentor.stats.clients}
+                          </p>
                         </div>
                       </div>
 
                       {/* Name and role */}
-                      <h3 className="text-xl font-bold text-gray-800">{mentor.name}</h3>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {mentor.name}
+                      </h3>
                       <div className="flex items-center mb-2">
-                        <div className={`h-0.5 w-6 bg-gradient-to-r ${mentor.gradient} mr-2`}></div>
-                        <p className={`text-sm font-medium ${mentor.textColor}`}>{mentor.role}</p>
+                        <div
+                          className={`h-0.5 w-6 bg-gradient-to-r ${mentor.gradient} mr-2`}
+                        ></div>
+                        <p
+                          className={`text-sm font-medium ${mentor.textColor}`}
+                        >
+                          {mentor.role}
+                        </p>
                       </div>
 
                       {/* Description - Only visible on hover */}
                       <div
-                        className={`overflow-hidden transition-all duration-500 ${activeCard === index ? "max-h-20 opacity-100" : "max-h-0 opacity-0"}`}
+                        className={`overflow-hidden transition-all duration-500 ${
+                          activeCard === index
+                            ? "max-h-20 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
                       >
-                        <p className="text-gray-700 text-sm">{mentor.description}</p>
+                        <p className="text-gray-700 text-sm">
+                          {mentor.description}
+                        </p>
                       </div>
-
-                      {/* Connect button */}
-                      <button
-                        className={`mt-4 w-full py-2 rounded-lg bg-gradient-to-r ${mentor.gradient} text-white text-sm font-medium transition-all duration-300 opacity-0 group-hover:opacity-100 hover:shadow-lg`}
-                      >
-                        Connect with {mentor.name.split(" ")[0]}
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -203,15 +239,7 @@ export default function MentorsSection() {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-medium hover:from-purple-600 hover:to-indigo-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0">
-            Meet All Mentors
-          </button>
-        </div>
       </div>
     </section>
-  )
+  );
 }
-

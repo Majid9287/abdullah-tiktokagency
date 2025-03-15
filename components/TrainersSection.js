@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Play, Users, Zap, Calendar } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { Play, Users, Zap, Calendar } from "lucide-react";
 
 export default function TrainersSection() {
-  const [activeTrainer, setActiveTrainer] = useState(null)
+  const [activeTrainer, setActiveTrainer] = useState(null);
 
   const trainers = [
     {
       name: "James Wilson",
       specialty: "Live Performance",
       image: "/mentor1.jpg?height=400&width=300",
-      description: "James teaches creators how to captivate audiences during live sessions.",
+      description:
+        "James teaches creators how to captivate audiences during live sessions.",
       gradient: "from-teal-400 to-emerald-400",
       iconGradient: "from-teal-500 to-emerald-500",
       textColor: "text-teal-600",
@@ -27,7 +28,8 @@ export default function TrainersSection() {
       name: "Emma Rodriguez",
       specialty: "Audience Engagement",
       image: "/hero1.jpg?height=400&width=300",
-      description: "Emma specializes in building meaningful connections with viewers.",
+      description:
+        "Emma specializes in building meaningful connections with viewers.",
       gradient: "from-emerald-400 to-green-400",
       iconGradient: "from-emerald-500 to-green-500",
       textColor: "text-emerald-600",
@@ -42,7 +44,8 @@ export default function TrainersSection() {
       name: "Raj Mehta",
       specialty: "Technical Setup",
       image: "/placeholder.svg?height=400&width=300",
-      description: "Raj helps creators optimize their technical setup for professional streams.",
+      description:
+        "Raj helps creators optimize their technical setup for professional streams.",
       gradient: "from-green-400 to-lime-400",
       iconGradient: "from-green-500 to-lime-500",
       textColor: "text-green-600",
@@ -57,7 +60,8 @@ export default function TrainersSection() {
       name: "Lisa Wang",
       specialty: "Content Planning",
       image: "/placeholder.svg?height=400&width=300",
-      description: "Lisa teaches strategic content planning for maximum impact.",
+      description:
+        "Lisa teaches strategic content planning for maximum impact.",
       gradient: "from-lime-400 to-teal-400",
       iconGradient: "from-lime-500 to-teal-500",
       textColor: "text-lime-600",
@@ -68,7 +72,7 @@ export default function TrainersSection() {
         rating: "4.9",
       },
     },
-  ]
+  ];
 
   return (
     <section id="trainers" className="py-20 relative overflow-hidden">
@@ -81,16 +85,38 @@ export default function TrainersSection() {
         <div className="absolute top-40 right-10 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div> */}
+     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+  <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-200 rounded-full opacity-20 animate-pulse"></div>
+  <div
+    className="absolute top-20 right-20 w-60 h-60 bg-green-300 rounded-full opacity-20 animate-pulse"
+    style={{ animationDelay: "1s" }}
+  ></div>
+  <div
+    className="absolute bottom-10 left-1/4 w-40 h-40 bg-green-100 rounded-full opacity-20 animate-pulse"
+    style={{ animationDelay: "2s" }}
+  ></div>
+
+  {/* Additional floating elements */}
+  <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
+  <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
+
+  {/* Light rays */}
+  <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-green-200/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
+  <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-green-300/20 to-transparent transform -rotate-15 opacity-20"></div>
+</div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block py-1 px-4 rounded-full bg-teal-500/10 text-teal-600 text-sm font-medium mb-3">
             EXPERT TRAINING
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-teal-800 mb-4">Meet Our Specialized Trainers</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-teal-800 mb-4">
+            Meet Our Specialized Trainers
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-teal-900/70 max-w-2xl mx-auto">
-            Our trainers provide personalized guidance to help you master every aspect of TikTok live streaming.
+            Our trainers provide personalized guidance to help you master every
+            aspect of TikTok live streaming.
           </p>
         </div>
 
@@ -106,7 +132,9 @@ export default function TrainersSection() {
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 group-hover:shadow-2xl border border-white/50 h-full">
                 {/* Hexagonal pattern top accent */}
                 <div className="h-2 w-full bg-gradient-to-r from-transparent via-white to-transparent relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${trainer.gradient} opacity-80`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${trainer.gradient} opacity-80`}
+                  ></div>
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDg2IDQ4Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNODUuOTYxIDQwLjk0YTYuOTk3IDYuOTk3IDAgMCAxLTEuMzc3IDIuNDQ2TDQyLjUgMjQuMDAxIDAgNDcuNTg1YTcuMDA1IDcuMDA1IDAgMCAxLTEuMzc2LTIuNDQ3bDQzLjUzOC0yMy42MzdMODUuOTYgNDAuOTM5ek0xLjM3NyA3LjA1MkE2Ljk5NyA2Ljk5NyAwIDAgMSAyLjc1MyA0LjYwNkw0Mi41IDI0LjAwMSA4Mi4yNDcgNC42MDZhNi45OTcgNi45OTcgMCAwIDEgMS4zNzcgMi40NDZMNDIuNSAzMC42OTIgMS4zNzcgNy4wNTJ6TTAgMTUuNDM1YTcuMDAyIDcuMDAyIDAgMCAxIDAtNC44N2w0Mi41IDIzLjE0NCA0Mi41LTIzLjE0NGE3LjAwMiA3LjAwMiAwIDAgMSAwIDQuODdMNDIuNSAzOC41OCAweWV0IGFub3RoZXIgdGVzdCAxNS40MzV6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
                 </div>
 
@@ -125,8 +153,14 @@ export default function TrainersSection() {
                     <div
                       className={`bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-md border border-white/50`}
                     >
-                      <div className={`${trainer.textColor}`}>{trainer.icon}</div>
-                      <span className={`text-xs font-medium ${trainer.textColor}`}>{trainer.specialty}</span>
+                      <div className={`${trainer.textColor}`}>
+                        {trainer.icon}
+                      </div>
+                      <span
+                        className={`text-xs font-medium ${trainer.textColor}`}
+                      >
+                        {trainer.specialty}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -134,41 +168,46 @@ export default function TrainersSection() {
                 {/* Content */}
                 <div className="p-5">
                   <div className="flex items-center mb-3">
-                    <div className={`h-0.5 w-6 bg-gradient-to-r ${trainer.gradient} mr-2`}></div>
-                    <h3 className="text-xl font-bold text-gray-800">{trainer.name}</h3>
+                    <div
+                      className={`h-0.5 w-6 bg-gradient-to-r ${trainer.gradient} mr-2`}
+                    ></div>
+                    <h3 className="text-xl font-bold text-gray-800">
+                      {trainer.name}
+                    </h3>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4">{trainer.description}</p>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {trainer.description}
+                  </p>
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-2 mt-4">
                     <div className="text-center">
-                      <p className={`text-lg font-bold ${trainer.textColor}`}>{trainer.stats.sessions}</p>
+                      <p className={`text-lg font-bold ${trainer.textColor}`}>
+                        {trainer.stats.sessions}
+                      </p>
                       <p className="text-xs text-gray-500">Sessions</p>
                     </div>
                     <div className="text-center">
-                      <p className={`text-lg font-bold ${trainer.textColor}`}>{trainer.stats.students}</p>
+                      <p className={`text-lg font-bold ${trainer.textColor}`}>
+                        {trainer.stats.students}
+                      </p>
                       <p className="text-xs text-gray-500">Students</p>
                     </div>
                     <div className="text-center">
-                      <p className={`text-lg font-bold ${trainer.textColor}`}>{trainer.stats.rating}</p>
+                      <p className={`text-lg font-bold ${trainer.textColor}`}>
+                        {trainer.stats.rating}
+                      </p>
                       <p className="text-xs text-gray-500">Rating</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Book button - appears on hover */}
-                <div className="px-5 pb-5">
-                  <button
-                    className={`w-full py-2 rounded-lg bg-gradient-to-r ${trainer.gradient} text-white text-sm font-medium transition-all duration-300 opacity-0 group-hover:opacity-100 hover:shadow-lg transform group-hover:translate-y-0 translate-y-4`}
-                  >
-                    Book a Session
-                  </button>
-                </div>
-
                 {/* Hexagonal pattern bottom accent */}
                 <div className="h-2 w-full bg-gradient-to-r from-transparent via-white to-transparent relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${trainer.gradient} opacity-80`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${trainer.gradient} opacity-80`}
+                  ></div>
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDg2IDQ4Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNODUuOTYxIDQwLjk0YTYuOTk3IDYuOTk3IDAgMCAxLTEuMzc3IDIuNDQ2TDQyLjUgMjQuMDAxIDAgNDcuNTg1YTcuMDA1IDcuMDA1IDAgMCAxLTEuMzc2LTIuNDQ3bDQzLjUzOC0yMy42MzdMODUuOTYgNDAuOTM5ek0xLjM3NyA3LjA1MkE2Ljk5NyA2Ljk5NyAwIDAgMSAyLjc1MyA0LjYwNkw0Mi41IDI0LjAwMSA4Mi4yNDcgNC42MDZhNi45OTcgNi45OTcgMCAwIDEgMS4zNzcgMi40NDZMNDIuNSAzMC42OTIgMS4zNzcgNy4wNTJ6TTAgMTUuNDM1YTcuMDAyIDcuMDAyIDAgMCAxIDAtNC44N2w0Mi41IDIzLjE0NCA0Mi41LTIzLjE0NGE3LjAwMiA3LjAwMiAwIDAgMSAwIDQuODdMNDIuNSAzOC41OCAweWV0IGFub3RoZXIgdGVzdCAxNS40MzV6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
                 </div>
               </div>
@@ -189,21 +228,7 @@ export default function TrainersSection() {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-teal-800 mb-3">Ready to elevate your TikTok skills?</h3>
-            <p className="text-gray-700 mb-6">
-              Our trainers offer both group workshops and one-on-one coaching sessions tailored to your specific needs.
-            </p>
-            <button className="px-8 py-3 rounded-full bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-medium hover:from-teal-600 hover:to-emerald-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0">
-              Schedule Training
-            </button>
-          </div>
-        </div>
       </div>
     </section>
-  )
+  );
 }
-

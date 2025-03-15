@@ -69,7 +69,7 @@ export default function Header() {
                 : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
             }`}
           >
-            Join Now
+            Apply Now
           </Link>
         </nav>
 
@@ -103,7 +103,7 @@ export default function Header() {
               className="bg-pink-600 text-white py-3 px-6 rounded-full text-center font-medium hover:bg-pink-700 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Join Now
+              Apply Now
             </Link>
           </nav>
         </div>

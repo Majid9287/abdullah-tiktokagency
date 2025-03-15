@@ -242,13 +242,6 @@ export default function CountriesSection() {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center">
-          <p className="text-indigo-900/70 mb-4">Dont see your country? Were constantly expanding!</p>
-          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-medium hover:from-indigo-600 hover:to-cyan-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0">
-            Check Eligibility
-          </button>
-        </div>
       </div>
     </section>
   )

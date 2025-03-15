@@ -122,7 +122,7 @@ function JoinUs() {
               className="px-6 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 w-full sm:w-auto"
             />
             <button className="bg-white text-indigo-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors shadow-lg">
-              Join Now
+              Apply Now
             </button>
           </div>
         </div>
