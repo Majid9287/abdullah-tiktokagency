@@ -3,15 +3,17 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Heart, MessageCircle, Share2 } from "lucide-react"
+import { useModal } from "./modal-context"
 
 export default function HeroSection() {
   const [showJoinLink, setShowJoinLink] = useState(false)
   const [currentVideo, setCurrentVideo] = useState(0)
+  const { openModal } = useModal()
 
   const videoThumbs = [
     "/hero1.jpg?height=600&width=300",
     "/hero2.jpg?height=600&width=300",
-    "/hero3.jpg?height=600&width=300"
+    "/hero3.jpg?height=600&width=300",
   ]
 
   const videoTexts = [
@@ -71,7 +73,7 @@ export default function HeroSection() {
 
             <div className="space-y-4">
               <button
-                onClick={() => setShowJoinLink(true)}
+                onClick={openModal}
                 className="bg-white text-pink-600 px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0"
               >
                 Apply Now

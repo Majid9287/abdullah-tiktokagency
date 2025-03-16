@@ -76,34 +76,26 @@ export default function TrainersSection() {
 
   return (
     <section id="trainers" className="py-20 relative overflow-hidden">
-      {/* Background with gradient overlay
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-100 to-teal-100"></div> */}
+      
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-200 rounded-full opacity-20 animate-pulse"></div>
+        <div
+          className="absolute top-20 right-20 w-60 h-60 bg-green-300 rounded-full opacity-20 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-10 left-1/4 w-40 h-40 bg-green-100 rounded-full opacity-20 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
 
-      {/* Animated background elements
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
-      </div> */}
-     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-  <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-200 rounded-full opacity-20 animate-pulse"></div>
-  <div
-    className="absolute top-20 right-20 w-60 h-60 bg-green-300 rounded-full opacity-20 animate-pulse"
-    style={{ animationDelay: "1s" }}
-  ></div>
-  <div
-    className="absolute bottom-10 left-1/4 w-40 h-40 bg-green-100 rounded-full opacity-20 animate-pulse"
-    style={{ animationDelay: "2s" }}
-  ></div>
+        {/* Additional floating elements */}
+        <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
+        <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
 
-  {/* Additional floating elements */}
-  <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-white rounded-full opacity-10 animate-float"></div>
-  <div className="absolute top-2/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 animate-float-delayed"></div>
-
-  {/* Light rays */}
-  <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-green-200/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
-  <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-green-300/20 to-transparent transform -rotate-15 opacity-20"></div>
-</div>
+        {/* Light rays */}
+        <div className="absolute top-0 left-1/2 w-1/2 h-screen bg-gradient-to-b from-green-200/20 to-transparent transform -translate-x-1/2 rotate-15 opacity-30"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-screen bg-gradient-to-b from-green-300/20 to-transparent transform -rotate-15 opacity-20"></div>
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
