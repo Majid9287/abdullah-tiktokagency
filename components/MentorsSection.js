@@ -39,7 +39,7 @@ export default function MentorsSection() {
     {
       name: "Jiya",
       role: "How To Use Live Features",
-      image: "/jiya.jpg?height=400&width=300",
+      image: "/Jiya.jpg?height=400&width=300",
       description: "Live Schedule:\nMonday:  10:00 PM",
       gradient: "from-blue-400 to-cyan-400",
       iconGradient: "from-blue-500 to-cyan-500",
