@@ -56,7 +56,7 @@ export default function JoinModal() {
         "Mauritania",
         "Palestine"
       ],
-      joinLink: "https://www.tiktok.com/t/mena-link/" // Replace with actual MENA region link
+      joinLink: "https://www.tiktok.com/t/ZMBjNBKjd/" // Replace with actual MENA region link
     }
   }
 
