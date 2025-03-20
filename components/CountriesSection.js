@@ -184,7 +184,7 @@ export default function CountriesSection() {
                     <Globe className="h-10 w-10 text-indigo-500" />
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-indigo-800 ml-4">50+ Countries</h3>
+                <h3 className="text-3xl font-bold text-indigo-800 ml-4">36+ Countries</h3>
               </div>
 
               <div className="space-y-4">
