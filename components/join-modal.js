@@ -1,12 +1,64 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { X } from "lucide-react"
 import { useModal } from "./modal-context"
 
 export default function JoinModal() {
   const { isModalOpen, closeModal } = useModal()
   const modalRef = useRef(null)
+  const [selectedRegion, setSelectedRegion] = useState("UK")
+  
+  const regions = {
+    UK: {
+      name: "UK & European Region",
+      countries: [
+        "UK",
+        "Ireland",
+        "Jersey",
+        "Isle of Man",
+        "Greece",
+        "Albania",
+        "Lithuania",
+        "Serbia",
+        "Latvia",
+        "Estonia",
+        "Macedonia",
+        "Bosnia",
+        "Malta",
+        "Montenegro",
+        "Faroe Islands",
+        "Gibraltar",
+        "Guernsey",
+        "Congo"
+      ],
+      joinLink: "https://www.tiktok.com/t/ZSj2DN58Y/" // UK region link
+    },
+    MENA: {
+      name: "MENA Region",
+      countries: [
+        "United Arab Emirates",
+        "Bahrain",
+        "Egypt",
+        "Jordan",
+        "Saudi Arabia",
+        "Morocco",
+        "Lebanon",
+        "Qatar",
+        "Kuwait",
+        "Oman",
+        "Tunisia",
+        "Algeria",
+        "Djibouti",
+        "Iraq",
+        "Comoros",
+        "Libya",
+        "Mauritania",
+        "Palestine"
+      ],
+      joinLink: "https://www.tiktok.com/t/mena-link/" // Replace with actual MENA region link
+    }
+  }
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -54,33 +106,67 @@ export default function JoinModal() {
 
         {/* Modal content */}
         <div className="relative p-6 pt-8">
-          <h3 className="text-2xl font-bold text-center text-pink-600 mb-2">Join Abdullah Agency</h3>
-          <p className="text-gray-600 text-center mb-6">Select your region to join our TikTok community</p>
-
-          <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-center mb-6">Join Our Community</h2>
+          
+          {/* Region selection tabs */}
+          <div className="flex mb-6 border-b">
+            {Object.keys(regions).map((region) => (
+              <button
+                key={region}
+                className={`px-4 py-2 font-medium ${
+                  selectedRegion === region
+                    ? "text-purple-600 border-b-2 border-purple-600"
+                    : "text-gray-500 hover:text-purple-600"
+                }`}
+                onClick={() => setSelectedRegion(region)}
+              >
+                {regions[region].name}
+              </button>
+            ))}
+          </div>
+          
+          {/* Countries grid */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">Available Countries</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 max-h-60 overflow-y-auto p-2">
+              {regions[selectedRegion].countries.map((country) => (
+                <div key={country} className="flex items-center">
+                  <span className="text-sm">{country}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="text-center text-sm text-gray-600 mb-4">
+            <p>Select your region above to continue</p>
+          </div>
+          
+          {/* Join button */}
+          <div className="flex justify-center">
             <a
-              href="https://www.tiktok.com/t/ZSj2DN58Y/"
+              href={regions[selectedRegion].joinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
             >
-              UK Region
-              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
-            </a>
-
-            <a
-              href="https://www.tiktok.com/t/ZMBjNBKjd/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full p-4 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
-            >
-              MENA Region
-              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
+              Join {regions[selectedRegion].name}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </a>
           </div>
-
-          <div className="mt-6 text-center text-sm text-gray-500">
-            By joining, you agree to our terms and conditions
+          
+          <div className="mt-4 text-center text-xs text-gray-500">
+            <p>By joining, you agree to our Terms of Service and Privacy Policy</p>
           </div>
         </div>
       </div>
