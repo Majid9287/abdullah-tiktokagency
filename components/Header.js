@@ -47,7 +47,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          {["Home", "Benefits", "Mentors", "Trainers", "Countries", "Events"].map((item) => (
+          {["Home", "Benefits", "Mentors",  "Countries", "Events"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
@@ -83,7 +83,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white/90 backdrop-blur-md py-4 px-4 shadow-lg animate-fade-in">
           <nav className="flex flex-col space-y-4">
-            {["Home", "Benefits", "Mentors", "Trainers", "Countries", "Events"].map((item) => (
+            {["Home", "Benefits", "Mentors",  "Countries", "Events"].map((item) => (
               <Link
                 key={item}
                 href={item === "Home" ? "/" : `#${item.toLowerCase()}`}

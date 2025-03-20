@@ -13,7 +13,7 @@ export default function Home() {
       <HeroSection />
       <BenefitsSection />
       <MentorsSection />
-      <TrainersSection />
+      {/* <TrainersSection /> */}
       <CountriesSection />
       <EventsMemoriesSection />
     </div>

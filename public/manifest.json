@@ -1,0 +1,21 @@
+{
+  "name": "Abdullah Agency - TikTok Live Agency",
+  "short_name": "Abdullah Agency",
+  "description": "Premier TikTok Live Agency helping creators grow their presence",
+  "start_url": "https://abdullahagency.uk",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B5CF6",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

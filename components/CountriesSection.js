@@ -184,7 +184,7 @@ export default function CountriesSection() {
                     <Globe className="h-10 w-10 text-indigo-500" />
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-indigo-800 ml-4">18+ Countries</h3>
+                <h3 className="text-3xl font-bold text-indigo-800 ml-4">50+ Countries</h3>
               </div>
 
               <div className="space-y-4">
@@ -229,7 +229,7 @@ export default function CountriesSection() {
                 <div className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-amber-500 mr-2"></div>
                   <p className="text-gray-700">
-                    <span className="font-medium">10 countries</span> in the MENA region
+                    <span className="font-medium">18 countries</span> in the MENA region
                   </p>
                 </div>
               </div>
