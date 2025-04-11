@@ -56,7 +56,7 @@ export default function JoinModal() {
         "Mauritania",
         "Palestine"
       ],
-      joinLink: "https://www.tiktok.com/t/ZMBjNBKjd/" // Replace with actual MENA region link
+      joinLink: "https://www.tiktok.com/t/ZMBjNBKjd/" // MENA region link
     }
   }
 
@@ -106,66 +106,61 @@ export default function JoinModal() {
 
         {/* Modal content */}
         <div className="relative p-6 pt-8">
-          <h2 className="text-2xl font-bold text-center mb-6">Join Our Community</h2>
+          <h3 className="text-2xl font-bold text-center text-pink-600 mb-2">Join Abdullah Agency</h3>
+          <p className="text-gray-600 text-center mb-6">Select your region to join our TikTok community</p>
           
-          {/* Region selection tabs */}
-          <div className="flex mb-6 border-b">
-            {Object.keys(regions).map((region) => (
-              <button
-                key={region}
-                className={`px-4 py-2 font-medium ${
-                  selectedRegion === region
-                    ? "text-purple-600 border-b-2 border-purple-600"
-                    : "text-gray-500 hover:text-purple-600"
-                }`}
-                onClick={() => setSelectedRegion(region)}
-              >
-                {regions[region].name}
-              </button>
-            ))}
-          </div>
-          
-          {/* Countries grid */}
+          {/* Countries grid with vertical divider */}
           <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-2">Available Countries</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 max-h-60 overflow-y-auto p-2">
-              {regions[selectedRegion].countries.map((country) => (
-                <div key={country} className="flex items-center">
-                  <span className="text-sm">{country}</span>
+            <div className="flex mb-2">
+              <h3 className="text-lg font-semibold flex-1 text-center">MENA Region</h3>
+              <h3 className="text-lg font-semibold flex-1 text-center">UK & European Region</h3>
+            </div>
+            <div className="flex mb-6">
+              <div className="flex-1 border-r pr-2">
+                <div className="grid gap-y-1 max-h-48 overflow-y-auto p-2">
+                  {regions["MENA"].countries.map((country) => (
+                    <div key={country} className="flex items-center">
+                      <span className="text-sm">{country}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="flex-1 pl-2">
+                <div className="grid gap-y-1 max-h-48 overflow-y-auto p-2">
+                  {regions["UK"].countries.map((country) => (
+                    <div key={country} className="flex items-center">
+                      <span className="text-sm">{country}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           
-          <div className="text-center text-sm text-gray-600 mb-4">
-            <p>Select your region above to continue</p>
-          </div>
-          
-          {/* Join button */}
-          <div className="flex justify-center">
+          {/* Join buttons with previous design */}
+          <div className="space-y-4">
             <a
-              href={regions[selectedRegion].joinLink}
+              href={regions["UK"].joinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+              className="block w-full p-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
             >
-              Join {regions[selectedRegion].name}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              UK Region
+              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
+            </a>
+
+            <a
+              href={regions["MENA"].joinLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full p-4 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
+            >
+              MENA Region
+              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
             </a>
           </div>
           
-          <div className="mt-4 text-center text-xs text-gray-500">
+          <div className="mt-6 text-center text-xs text-gray-500">
             <p>By joining, you agree to our Terms of Service and Privacy Policy</p>
           </div>
         </div>
@@ -173,4 +168,3 @@ export default function JoinModal() {
     </div>
   )
 }
-

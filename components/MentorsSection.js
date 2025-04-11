@@ -11,7 +11,7 @@ export default function MentorsSection() {
   const mentors = [
     {
       name: "Dr.Usama Saleem",
-      role: "Founder && CEO",
+      role: "Founder & CEO",
       image: "/hero1.jpg?height=400&width=300",
       description: "Live Schedule:\nSaturday: 9:00 PM \nSunday: 9:00 PM",
       gradient: "from-pink-400 to-purple-400",
@@ -55,6 +55,16 @@ export default function MentorsSection() {
       iconGradient: "from-indigo-500 to-blue-500",
       textColor: "text-indigo-600",
     },
+    {
+      name: "Rubina",
+      role: "Live Broadcast",
+      image: "/rubina.jpg?height=400&width=300",
+      description: "Live Schedule:\nFriday: 9:00 PM",
+      gradient: "from-indigo-400 to-blue-400",
+      iconGradient: "from-indigo-500 to-blue-500",
+      textColor: "text-indigo-600",
+    },
+    
   ];
 
   const structuredData = {
