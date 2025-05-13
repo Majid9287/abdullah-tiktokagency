@@ -19,23 +19,15 @@ export default function MentorsSection() {
       textColor: "text-pink-600",
     },
     {
-      name: "Sherry Nama",
-      role: "Creator Performance Evaluation And Discussion",
-      image: "/Sherrynama.jpg?height=400&width=300",
+      name: "Dr. Ahmed Shahzad ",
+      role: "Manager",
+      image: "/ahmed.jpg?height=400&width=300",
       description: "Live Schedule:\nTuesday: 9:00 PM",
       gradient: "from-purple-400 to-indigo-400",
       iconGradient: "from-purple-500 to-indigo-500",
       textColor: "text-purple-600",
     },
-    {
-      name: "Fariha Aftab",
-      role: "TikTok Promotions",
-      image: "/Fariha.jpg?height=400&width=300",
-      description: "Live Schedule:\nTuesday: 9:00 PM",
-      gradient: "from-blue-400 to-cyan-400",
-      iconGradient: "from-blue-500 to-cyan-500",
-      textColor: "text-blue-600",
-    },
+  
     {
       name: "Jiya",
       role: "How To Use Live Features",
