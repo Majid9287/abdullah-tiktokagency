@@ -19,7 +19,7 @@ export default function MentorsSection() {
       textColor: "text-pink-600",
     },
     {
-      name: "Dr. Ahmed Shahzad ",
+      name: "Dr.Shahzad Ahmad",
       role: "Manager",
       image: "/ahmed.jpg?height=400&width=300",
       description: "Live Schedule:\nTuesday: 9:00 PM",
