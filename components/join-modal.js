@@ -105,15 +105,15 @@ export default function JoinModal() {
         </button>
 
         {/* Modal content */}
-        <div className="relative p-6 pt-8">
-          <h3 className="text-2xl font-bold text-center text-pink-600 mb-2">Join Abdullah Agency</h3>
-          <p className="text-gray-600 text-center mb-6">Select your region to join our TikTok community</p>
+        <div className="relative p-4 pt-4">
+          <h3 className="text-xl font-bold text-center text-pink-600 mb-2">Join Abdullah Agency</h3>
+          <p className="text-gray-600 text-center text-xs mb-2">Select your region to join our TikTok community</p>
           
           {/* Countries grid with vertical divider */}
           <div className="mb-6">
             <div className="flex mb-2">
-              <h3 className="text-lg font-semibold flex-1 text-center">MENA Region</h3>
-              <h3 className="text-lg font-semibold flex-1 text-center">UK & European Region</h3>
+              <h3 className="md:text-md text-sm font-semibold flex-1 text-center">MENA Region</h3>
+              <h3 className="md:text-md text-sm font-semibold flex-1 text-center">UK & European Region</h3>
             </div>
             <div className="flex mb-6">
               <div className="flex-1 border-r pr-2">
@@ -138,31 +138,31 @@ export default function JoinModal() {
           </div>
           
           {/* Join buttons with previous design */}
-          <div className="space-y-4">
+          <div className=" space-y-2">
             <a
               href={regions["UK"].joinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
+              className="block w-full p-2  bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
             >
               UK Region
-              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
+              <span className="block text-xs mt-1 text-white/80">Abdullah Agency Joining Link</span>
             </a>
 
             <a
               href={regions["MENA"].joinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
+              className="block w-full p-2  bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-xl text-center font-medium transition-all transform hover:-translate-y-1 active:translate-y-0 shadow-md hover:shadow-lg"
             >
               MENA Region
-              <span className="block text-sm mt-1 text-white/80">Abdullah Agency Joining Link</span>
+              <span className="block text-xs mt-1 text-white/80">Abdullah Agency Joining Link</span>
             </a>
           </div>
           
-          <div className="mt-6 text-center text-xs text-gray-500">
+          <div className=" mt-2 text-center text-xs text-gray-500">
             <p>By joining, you agree to our Terms of Service and Privacy Policy</p>
-            <p className="mt-2">
+            <p className="mt-1">
               Made with ❤️ by{" "}
               <a 
                 href="https://abdulmajid.me/" 
