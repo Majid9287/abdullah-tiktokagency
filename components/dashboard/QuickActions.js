@@ -1,8 +1,13 @@
+"use client"
+
 import Link from "next/link"
-import { UserPlus, CalendarPlus, GlobeIcon as GlobeCheck, Upload } from "lucide-react"
+import { UserPlus, CalendarPlus, Users } from "lucide-react"
+import { useSession } from "next-auth/react"
 
 export default function QuickActions() {
-  const actions = [
+  const { data: session } = useSession()
+
+  const allActions = [
     {
       title: "Add New Mentor",
       description: "Add a new mentor to the agency",
@@ -10,36 +15,36 @@ export default function QuickActions() {
       href: "/dashboard/people/add-mentor",
     },
     {
-      title: "Add New Trainer",
-      description: "Add a new trainer to the agency",
-      icon: <UserPlus className="h-6 w-6 text-pink-600" />,
-      href: "/dashboard/people/add-trainer",
-    },
-    {
       title: "Create Event",
-      description: "Schedule a new event or memory",
+      description: "Add new event or memory with image/video",
       icon: <CalendarPlus className="h-6 w-6 text-pink-600" />,
-      href: "/dashboard/events/create",
+      href: "/dashboard/events",
     },
     {
-      title: "Update Countries",
-      description: "Manage supported countries",
-      icon: <GlobeCheck className="h-6 w-6 text-pink-600" />,
-      href: "/dashboard/countries",
+      title: "Create User",
+      description: "Add a new user account",
+      icon: <UserPlus className="h-6 w-6 text-pink-600" />,
+      href: "/dashboard/users",
+      requiresSystemAdmin: true,
     },
     {
-      title: "Upload Media",
-      description: "Add new images or videos",
-      icon: <Upload className="h-6 w-6 text-pink-600" />,
-      href: "/dashboard/media/upload",
+      title: "View Users",
+      description: "Manage user accounts",
+      icon: <Users className="h-6 w-6 text-pink-600" />,
+      href: "/dashboard/users",
+      requiresSystemAdmin: true,
     },
   ]
+
+  const actions = allActions.filter(action =>
+    !action.requiresSystemAdmin || session?.user?.isSystemAdmin
+  );
 
   return (
     <div>
       <h2 className="text-xl font-bold text-gray-800 mb-4">Quick Actions</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {actions.map((action, index) => (
           <Link
             key={index}

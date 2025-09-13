@@ -17,6 +17,11 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
+                <Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">
+                  Login
+                </Link>
+              </li>
+              <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Home
                 </Link>
@@ -84,6 +89,17 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Abdullah Agency. All rights reserved.</p>
+          <p className="mt-2">
+            Made with ❤️ by{" "}
+            <a 
+              href="https://abdulmajid.me/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-pink-300 transition-colors font-medium"
+            >
+              Software Engineer Majid
+            </a>
+          </p>
         </div>
       </div>
     </footer>

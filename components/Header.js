@@ -46,12 +46,12 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center space-x-8">
           {["Home", "Benefits", "Mentors",  "Countries", "Events"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `#${item.toLowerCase()}`}
-              className={`font-medium transition-all duration-300 hover:text-pink-500 ${
+              className={`font-medium transition-all duration-300 hover:text-pink-500 py-2 ${
                 scrolled ? "text-gray-800" : "text-white"
               }`}
             >

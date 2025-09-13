@@ -1,81 +1,111 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { TiktokIcon, InstagramIcon } from "./social-icons";
 import Head from 'next/head'
 
 export default function MentorsSection() {
   const [activeCard, setActiveCard] = useState(null);
+  const [mentors, setMentors] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const mentors = [
-    {
-      name: "Dr.Usama Saleem",
-      role: "Founder & CEO",
-      image: "/hero1.jpg?height=400&width=300",
-      description: "Live Schedule:\nSaturday: 9:00 PM \nSunday: 9:00 PM",
-      gradient: "from-pink-400 to-purple-400",
-      iconGradient: "from-pink-500 to-purple-500",
-      textColor: "text-pink-600",
-    },
-    {
-      name: "Dr.Shahzad Ahmad",
-      role: "Manager",
-      image: "/ahmed.jpg?height=400&width=300",
-      description: "Live Schedule:\nTuesday: 9:00 PM",
-      gradient: "from-purple-400 to-indigo-400",
-      iconGradient: "from-purple-500 to-indigo-500",
-      textColor: "text-purple-600",
-    },
-  
-    {
-      name: "Jiya",
-      role: "How To Use Live Features",
-      image: "/Jiya.jpg?height=400&width=300",
-      description: "Live Schedule:\nMonday:  10:00 PM",
-      gradient: "from-blue-400 to-cyan-400",
-      iconGradient: "from-blue-500 to-cyan-500",
+  // Fetch mentors from API
+  useEffect(() => {
+    // Predefined gradient and color combinations
+    const colorCombinations = [
+      {
+        gradient: "from-pink-400 to-purple-400",
+        iconGradient: "from-pink-500 to-purple-500",
+        textColor: "text-pink-600",
+      },
+      {
+        gradient: "from-purple-400 to-indigo-400",
+        iconGradient: "from-purple-500 to-indigo-500",
+        textColor: "text-purple-600",
+      },
+      {
+        gradient: "from-blue-400 to-cyan-400",
+        iconGradient: "from-blue-500 to-cyan-500",
+        textColor: "text-blue-600",
+      },
+      {
+        gradient: "from-indigo-400 to-blue-400",
+        iconGradient: "from-indigo-500 to-blue-500",
+        textColor: "text-indigo-600",
+      },
+      {
+        gradient: "from-cyan-400 to-teal-400",
+        iconGradient: "from-cyan-500 to-teal-500",
+        textColor: "text-cyan-600",
+      },
+      {
+        gradient: "from-teal-400 to-green-400",
+        iconGradient: "from-teal-500 to-green-500",
+        textColor: "text-teal-600",
+      },
+      {
+        gradient: "from-green-400 to-emerald-400",
+        iconGradient: "from-green-500 to-emerald-500",
+        textColor: "text-green-600",
+      },
+      {
+        gradient: "from-emerald-400 to-lime-400",
+        iconGradient: "from-emerald-500 to-lime-500",
+        textColor: "text-emerald-600",
+      },
+      {
+        gradient: "from-orange-400 to-red-400",
+        iconGradient: "from-orange-500 to-red-500",
+        textColor: "text-orange-600",
+      },
+      {
+        gradient: "from-red-400 to-pink-400",
+        iconGradient: "from-red-500 to-pink-500",
+        textColor: "text-red-600",
+      },
+    ];
 
-      textColor: "text-blue-600",
-    },
-    {
-      name: "Dr.Naeema",
-      role: "How To Improve Live Broadcast",
-      image: "/Dr.Naeema.jpg?height=400&width=300",
-      description: "Live Schedule:\nFriday: 9:00 PM",
-      gradient: "from-indigo-400 to-blue-400",
-      iconGradient: "from-indigo-500 to-blue-500",
-      textColor: "text-indigo-600",
-    },
-    {
-      name: "Rubina",
-      role: "Live Mentor",
-      image: "/rubina.jpg?height=400&width=300",
-      description: "Live Schedule:\nFriday: 9:00 PM",
-      gradient: "from-indigo-400 to-blue-400",
-      iconGradient: "from-indigo-500 to-blue-500",
-      textColor: "text-indigo-600",
-    },
- {
-      name: "Najeeb",
-      role: "Live Mentor",
-      image: "/najeeb.jpg?height=400&width=300",
-      description: "Live Schedule:\nFriday: 9:00 PM",
-      gradient: "from-indigo-400 to-blue-400",
-      iconGradient: "from-indigo-500 to-blue-500",
-      textColor: "text-indigo-600",
-    },
- {
-      name: "Arshi",
-      role: "Sub Agency",
-      image: "/arshi.jpg?height=400&width=300",
-      description: "Live Schedule:\nFriday: 9:00 PM",
-      gradient: "from-indigo-400 to-blue-400",
-      iconGradient: "from-indigo-500 to-blue-500",
-      textColor: "text-indigo-600",
-    },
-    
-  ];
+    // Function to get random color combination
+    const getRandomColorCombination = (index) => {
+      return colorCombinations[index % colorCombinations.length];
+    };
+
+    // Function to format availability
+    const formatAvailability = (availability) => {
+      if (!availability || availability.length === 0) return "Schedule TBD";
+      
+      return availability
+        .filter(slot => slot.isActive)
+        .map(slot => `${slot.day.charAt(0).toUpperCase() + slot.day.slice(1)}: ${slot.timeRange}`)
+        .join('\n');
+    };
+
+    const fetchMentors = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/mentors');
+        const data = await response.json();
+        
+        if (data.mentors) {
+          // Add color combinations to each mentor
+          const mentorsWithColors = data.mentors.map((mentor, index) => ({
+            ...mentor,
+            ...getRandomColorCombination(index),
+            description: formatAvailability(mentor.availability),
+            role: mentor.title, // Map title to role for consistency
+          }));
+          setMentors(mentorsWithColors);
+        }
+      } catch (error) {
+        console.error('Error fetching mentors:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMentors();
+  }, []);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -84,9 +114,9 @@ export default function MentorsSection() {
       "@type": "Person",
       "position": index + 1,
       "name": mentor.name,
-      "jobTitle": mentor.role,
+      "jobTitle": mentor.title,
       "image": `https://your-domain.com${mentor.image}`,
-      "description": mentor.description
+      "description": mentor.bio
     }))
   }
 
@@ -133,8 +163,13 @@ export default function MentorsSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {mentors.map((mentor, index) => (
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {mentors.map((mentor, index) => (
               <div
                 key={index}
                 className="relative group"
@@ -192,7 +227,7 @@ export default function MentorsSection() {
                           <p
                             className={`text-sm font-medium ${mentor.textColor}`}
                           >
-                            {mentor.role}
+                            {mentor.title}
                           </p>
                         </div>
 
@@ -220,8 +255,9 @@ export default function MentorsSection() {
                   ></div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

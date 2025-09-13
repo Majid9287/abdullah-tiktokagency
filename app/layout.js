@@ -1,11 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { ModalProvider } from "@/components/modal-context";
-import JoinModal from "@/components/join-modal";
+import LayoutWrapper from "@/components/LayoutWrapper";
 import { siteMetadata } from './metadata'
 import { favicons } from './favicon';
+import { SessionProvider } from '@/components/SessionProvider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,16 +65,13 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
-        <ModalProvider> <Header />{" "}
-          
-            <main className="flex-grow">
+        <SessionProvider>
+          <div className="flex flex-col min-h-screen">
+            <LayoutWrapper>
               {children}
-              <JoinModal />
-            </main>
-          
-          <Footer /></ModalProvider>
-        </div>
+            </LayoutWrapper>
+          </div>
+        </SessionProvider>
       </body>
     </html>
   );

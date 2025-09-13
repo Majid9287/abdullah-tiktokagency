@@ -162,6 +162,17 @@ export default function JoinModal() {
           
           <div className="mt-6 text-center text-xs text-gray-500">
             <p>By joining, you agree to our Terms of Service and Privacy Policy</p>
+            <p className="mt-2">
+              Made with ❤️ by{" "}
+              <a 
+                href="https://abdulmajid.me/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-600 transition-colors font-medium"
+              >
+                Software Engineer Majid
+              </a>
+            </p>
           </div>
         </div>
       </div>
