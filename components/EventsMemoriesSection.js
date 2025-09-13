@@ -611,36 +611,6 @@ export default function EventsMemoriesSection() {
               </div>
             )}
 
-            {/* Video Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-              <div className="max-w-4xl">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{featuredEvent.title}</h3>
-                <p className="text-lg text-white/90 mb-4">{featuredEvent.description}</p>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center text-white/80">
-                    <Calendar className="h-5 w-5 mr-2" />
-                    <span>
-                      {new Date(featuredEvent.createdAt).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
-                    </span>
-                  </div>
-                  {featuredEvent.type === 'video' && featuredEvent.videoUrl && (
-                    <a
-                      href={featuredEvent.videoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${getPlatformColor(featuredEvent.platform)} text-white font-semibold hover:shadow-lg transition-all`}
-                    >
-                      Watch on {featuredEvent.platform === 'youtube' ? 'YouTube' : featuredEvent.platform === 'tiktok' ? 'TikTok' : 'Platform'}
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}

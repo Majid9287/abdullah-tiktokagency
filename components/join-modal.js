@@ -90,7 +90,7 @@ export default function JoinModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div
         ref={modalRef}
-        className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up"
+        className="relative w-full max-w-md bg-white max-h-[90vh]   rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up"
       >
         {/* Decorative elements */}
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-400 rounded-full opacity-20"></div>
