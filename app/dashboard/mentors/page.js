@@ -529,14 +529,20 @@ export default function MentorsPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => openModal(mentor)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openModal(mentor);
+                          }}
                           className="text-blue-600 hover:text-blue-900 p-1 rounded"
                           title="Edit mentor"
                         >
                           <Edit size={16} />
                         </button>
                         <button
-                          onClick={() => handleDelete(mentor._id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDelete(mentor._id);
+                          }}
                           className="text-red-600 hover:text-red-900 p-1 rounded"
                           title="Delete mentor"
                         >

@@ -387,7 +387,10 @@ export default function UsersPage() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => openModal(user)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openModal(user);
+                        }}
                         className="text-blue-600 hover:text-blue-900 p-1"
                         title="Edit User"
                       >
@@ -395,7 +398,10 @@ export default function UsersPage() {
                       </button>
 
                       <button
-                        onClick={() => toggleAdminStatus(user._id, user.isAdmin)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleAdminStatus(user._id, user.isAdmin);
+                        }}
                         className={`p-1 rounded ${user.isAdmin ? 'text-blue-600 hover:text-blue-800' : 'text-gray-400 hover:text-gray-600'}`}
                         title={user.isAdmin ? 'Remove Admin' : 'Make Admin'}
                       >
@@ -403,7 +409,10 @@ export default function UsersPage() {
                       </button>
 
                       <button
-                        onClick={() => toggleSystemAdminStatus(user._id, user.isSystemAdmin)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleSystemAdminStatus(user._id, user.isSystemAdmin);
+                        }}
                         className={`p-1 rounded ${user.isSystemAdmin ? 'text-red-600 hover:text-red-800' : 'text-gray-400 hover:text-gray-600'}`}
                         title={user.isSystemAdmin ? 'Remove System Admin' : 'Make System Admin'}
                       >
@@ -411,7 +420,10 @@ export default function UsersPage() {
                       </button>
 
                       <button
-                        onClick={() => openPasswordModal(user)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          openPasswordModal(user);
+                        }}
                         className="text-green-600 hover:text-green-900 p-1"
                         title="Change Password"
                       >
@@ -419,7 +431,10 @@ export default function UsersPage() {
                       </button>
 
                       <button
-                        onClick={() => handleDelete(user._id)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDelete(user._id);
+                        }}
                         className="text-red-600 hover:text-red-900 p-1"
                         title="Delete User"
                       >

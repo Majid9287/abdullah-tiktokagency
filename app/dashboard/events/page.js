@@ -373,14 +373,20 @@ export default function EventsPage() {
                           </button>
                         )}
                         <button
-                          onClick={() => handleEdit(event)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleEdit(event);
+                          }}
                           className="text-blue-600 hover:text-blue-900 p-1 rounded"
                           title="Edit event"
                         >
                           <Edit size={16} />
                         </button>
                         <button
-                          onClick={() => handleDelete(event._id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDelete(event._id);
+                          }}
                           className="text-red-600 hover:text-red-900 p-1 rounded"
                           title="Delete event"
                         >

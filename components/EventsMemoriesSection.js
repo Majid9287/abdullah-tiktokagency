@@ -23,7 +23,7 @@ export default function EventsMemoriesSection() {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('/api/events?showAll=true')
+      const response = await fetch('/api/events?showAll=false')
       if (response.ok) {
         const data = await response.json()
         setEvents(data.events || [])
